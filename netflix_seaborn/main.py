@@ -22,26 +22,35 @@ class task_2:
 
     def destribution_genre(self) -> None:
         genre_counts = self.data.groupby('Genre')['Title'].count().reset_index()
+        sns.set(style="whitegrid")
+        sns.set_palette('dark')
         sns.barplot(data=genre_counts, x='Genre', y='Title')
         plt.xlabel('Genre')
         plt.ylabel('Title')
         plt.title('Распределение фильмов по жанрам')
+        plt.rc('Comfortaa')
         plt.show()
     
     def destribution_lang(self) -> None:
         lang_counts = self.data.groupby('Language')['Title'].count().reset_index()
+        sns.set(style="whitegrid")
+        sns.set_palette('dark')
         sns.barplot(data=lang_counts, x='Language', y='Title')
         plt.xlabel('Language')
         plt.ylabel('Title')
         plt.title('Распределение фильмов по языкам')
+        plt.rc('Comfortaa')
         plt.show()
 
     def destribution_year(self) -> None:
         premiere_counts = self.data.groupby('Premiere')['Title'].count().reset_index()
+        sns.set(style="whitegrid")
+        sns.set_palette('dark')
         sns.barplot(data=premiere_counts, x='Premiere', y='Title')
         plt.xlabel('Premiere')
         plt.ylabel('Title')
         plt.title('Распределение фильмов по годам')
+        plt.rc('Comfortaa')
         plt.show()
 
 
@@ -50,19 +59,25 @@ class task_3:
         self.data = data
     
     def destribution_imdb(self) -> None:
+        sns.set(style="whitegrid")
+        sns.set_palette('dark')
         sns.barplot(data=self.data, x = 'Title', y = 'IMDB Score')
         plt.xlabel('Title')
         plt.ylabel('IMDB')
         plt.title('Распределение фильмов по IMDB')
+        plt.rc('Comfortaa')
         plt.show()
     def destribution_genre(self) -> None:
         task_2(self.data).destribution_genre()
     def destribution_imdb_of_time(self) -> None:
         avg_rating_by_year = self.data.groupby('Premiere')['IMDB Score'].mean()
+        sns.set(style="whitegrid")
+        sns.set_palette('dark')
         sns.lineplot(x=avg_rating_by_year.index, y=avg_rating_by_year.values)
         plt.xlabel('Premiere')
         plt.ylabel('IMDB')
         plt.title('Временой интервал фильмов по рейтингу')
+        plt.rc('Comfortaa')
         plt.show()
 
 
