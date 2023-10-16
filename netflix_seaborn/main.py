@@ -20,11 +20,6 @@ class task_2:
     def data_count(self) -> tuple:
         return f'{self.data.shape[1],self.data.shape[0]}'
 
-
-class task_4:
-    def __init__(self, data) -> None:
-        self.data = data
-    
     def destribution_genre(self) -> None:
         genre_counts = self.data.groupby('Genre')['Title'].count().reset_index()
         sns.barplot(data=genre_counts, x='Genre', y='Title')
@@ -49,7 +44,7 @@ class task_4:
         plt.title('Распределение фильмов по годам')
         plt.show()
 
-        
+
 
 
 
