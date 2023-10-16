@@ -7,7 +7,7 @@ data = pd.read_csv("Netflix.csv", encoding='latin1')
 # sns.barplot(data=data, x='Premiere', y='Runtime')
 # plt.show()
 
-class task_1:
+class task_2:
     def __init__(self, data):
         self.data = data
     
