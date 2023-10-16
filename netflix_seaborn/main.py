@@ -28,7 +28,7 @@ class task_2:
         plt.title('Распределение фильмов по жанрам')
         plt.show()
     
-    def destribution_lang(self):
+    def destribution_lang(self) -> None:
         lang_counts = self.data.groupby('Language')['Title'].count().reset_index()
         sns.barplot(data=lang_counts, x='Language', y='Title')
         plt.xlabel('Language')
@@ -36,7 +36,7 @@ class task_2:
         plt.title('Распределение фильмов по языкам')
         plt.show()
 
-    def destribution_year(self):
+    def destribution_year(self) -> None:
         premiere_counts = self.data.groupby('Premiere')['Title'].count().reset_index()
         sns.barplot(data=premiere_counts, x='Premiere', y='Title')
         plt.xlabel('Premiere')
@@ -45,7 +45,31 @@ class task_2:
         plt.show()
 
 
+class task_3:
+    def __init__(self, data) -> None:
+        self.data = data
+    
+    def destribution_imdb(self) -> None:
+        sns.barplot(data=self.data, x = 'Title', y = 'IMDB Score')
+        plt.xlabel('Title')
+        plt.ylabel('IMDB')
+        plt.title('Распределение фильмов по IMDB')
+        plt.show()
+    def destribution_genre(self) -> None:
+        task_2(self.data).destribution_genre()
+    def destribution_imdb_of_time(self) -> None:
+        avg_rating_by_year = self.data.groupby('Premiere')['IMDB Score'].mean()
+        sns.lineplot(x=avg_rating_by_year.index, y=avg_rating_by_year.values)
+        plt.xlabel('Premiere')
+        plt.ylabel('IMDB')
+        plt.title('Временой интервал фильмов по рейтингу')
+        plt.show()
 
+
+
+
+
+task_3(data).destribution_imdb_of_time()
 
 
 
