@@ -16,5 +16,11 @@ class task_1:
         for name in self.data.columns:
             result[name] = str(data[name].dtype)
         return result
+    
+    def data_count(self):
+        return f'{self.data.shape[1],self.data.shape[0]}'
 
-print(task_1(data=data).data_type())
+
+
+
+print(task_1(data=data).data_count())
