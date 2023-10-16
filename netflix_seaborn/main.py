@@ -23,4 +23,4 @@ class task_2:
 
 
 
-print(task_1(data=data).data_count())
+# print(task_1(data=data).data_count())
