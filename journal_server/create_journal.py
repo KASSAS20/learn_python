@@ -61,4 +61,4 @@ class work_of_path:
 def make(name):
     work_of_path(f'{name}.txt').create_journal()
 
-make('journal')
+# make('journal')
