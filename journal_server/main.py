@@ -11,6 +11,7 @@ class Log:
 
 class DataCalculation:
     def __init__(self, logs) -> None:
+        self.logs = logs
         self.ip = list()
         self.date = list()
         self.time = list()
@@ -42,10 +43,25 @@ class DataCalculation:
     
     def count_status(self, status):
         return self.status_server.count(str(status))
-
-
-
     
+    def count_day_requests(self):
+        dict_date = dict()
+        for date in self.date:
+            dict_date[date] = self.date.count(date)
+        sort_dict = dict(sorted(dict_date.items(), key = lambda item: item[1], reverse=True))
+        first_key = next(iter(sort_dict))
+        url_list_day = list()
+        for log in logs:
+            if log.date == first_key:
+                url_list_day.append(log.url)
+
+        dict_url = dict()
+        for url in url_list_day:
+            dict_url[url] = url_list_day.count(url)
+        sort_dict_url = dict(sorted(dict_url.items(), key = lambda item: item[1], reverse=True))
+        
+        return sort_dict_url
+
 
 
 
@@ -57,4 +73,4 @@ def pars_log(file) -> None:
             logs.append(Log(list_line))
 
 # pars_log('journal.txt')
-# print(DataCalculation(logs).count_status(status=200))
+# print(DataCalculation(logs).count_day_requests())
