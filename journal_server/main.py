@@ -1,4 +1,3 @@
-
 logs = list()
 class Log:
     def __init__(self, data) -> None:
@@ -10,7 +9,7 @@ class Log:
         self.size_response = data[5]
 
 class DataCalculation:
-    def __init__(self, logs) -> None:
+    def __init__(self, logs = logs) -> None:
         self.logs = logs
         self.ip = list()
         self.date = list()
@@ -26,7 +25,7 @@ class DataCalculation:
             self.status_server.append(log.status_server)
             self.size_response.append(log.size_response)
     
-    def top_urls(self):
+    def top_urls(self) -> dict:
         dict_urls = dict()
         for url in self.urls:
             dict_urls[url] = self.urls.count(url)
@@ -34,17 +33,17 @@ class DataCalculation:
                 sorted(dict_urls.items(), key=lambda item: item[1], reverse=True))
         return sorted_dict
     
-    def averege_response_size(self):
+    def averege_response_size(self) -> str:
         res = 0
         for size in self.size_response:
             res+= int(size)
         res /= len(self.size_response)
         return f'{res}kb'
     
-    def count_status(self, status):
+    def count_status(self, status) -> list:
         return self.status_server.count(str(status))
     
-    def count_day_requests(self):
+    def count_day_requests(self) -> dict:
         dict_date = dict()
         for date in self.date:
             dict_date[date] = self.date.count(date)
@@ -59,11 +58,7 @@ class DataCalculation:
         for url in url_list_day:
             dict_url[url] = url_list_day.count(url)
         sort_dict_url = dict(sorted(dict_url.items(), key = lambda item: item[1], reverse=True))
-        
         return sort_dict_url
-
-
-
 
 def pars_log(file) -> None:
     with open(f'{file}') as jornal:
