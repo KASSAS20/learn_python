@@ -2,6 +2,7 @@ from datetime import datetime
 
 
 TASKS = list()
+SEVENDAYS = [[], [], [], [], [], [], []]
 class Task:
     def __init__(self, name: str, destriction: str, end_date: datetime, level: int) -> None:
         self.name = name
@@ -17,10 +18,12 @@ class Meta:
             if task.end_date < datetime.now():
                 result.append(task)
         return result
+    
+        
 
-Task('1','1',datetime(2023, 12, 20, 20, 20, 0), 1)
+Task('1','1',datetime(2023, 12, 20, 20, 20, 0), 2)
 Task('2','2',datetime(2022, 12, 20, 20, 20, 0), 3)
-Task('3','3',datetime.now(), 0)
+Task('3','3',datetime.now(), 1)
 
 for i in Meta.get_falshe_tasks():
     print(i.name)
