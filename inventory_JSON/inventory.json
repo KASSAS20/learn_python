@@ -1,0 +1,38 @@
+{
+    "Toyz": {
+        "id": 1,
+        "distriction": "tangy watermelon",
+        "price": 350,
+        "count": 13
+    },
+    "Brusko": {
+        "id": 2,
+        "distriction": "Banana",
+        "price": 300,
+        "count": 53
+    },
+    "Glitch Sauce": {
+        "id": 3,
+        "distriction": "Pineapple",
+        "price": 400,
+        "count": 32
+    },
+    "Haski": {
+        "id": 4,
+        "distriction": "Mojito",
+        "price": 270,
+        "count": 19
+    },
+    "Mad": {
+        "id": 5,
+        "distriction": "Nettle",
+        "price": 290,
+        "count": 13
+    },
+    "Zapravka59": {
+        "id": 10,
+        "distriction": "apple",
+        "price": 400,
+        "count": 123
+    }
+}
