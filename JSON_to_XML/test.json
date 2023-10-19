@@ -1,0 +1,17 @@
+{
+    "ХаудиХО": {
+        "platform": "YouTube",
+        "subscribe": 2000000,
+        "lang": "Rust"
+    },
+    "Гоша Дударь": {
+        "platform": "YouTube",
+        "subscribe": 500000,
+        "lang": "JS"
+    },
+    "PythonToDay": {
+        "platform": "YouTube",
+        "subscribe": 90000,
+        "lang": "Python"
+    }
+}

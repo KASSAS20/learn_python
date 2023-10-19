@@ -1,0 +1,17 @@
+<root>
+  <ХаудиХО>
+    <platform>YouTube</platform>
+    <subscribe>2000000</subscribe>
+    <lang>Rust</lang>
+  </ХаудиХО>
+  <Гоша_Дударь>
+    <platform>YouTube</platform>
+    <subscribe>500000</subscribe>
+    <lang>JS</lang>
+  </Гоша_Дударь>
+  <PythonToDay>
+    <platform>YouTube</platform>
+    <subscribe>90000</subscribe>
+    <lang>Python</lang>
+  </PythonToDay>
+</root>
