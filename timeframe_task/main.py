@@ -2,7 +2,6 @@ from datetime import datetime
 
 
 TASKS = list()
-SEVENDAYS = [[], [], [], [], [], [], []]
 class Task:
     def __init__(self, name: str, destriction: str, end_date: datetime, level: int) -> None:
         self.name = name
